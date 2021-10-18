@@ -1,0 +1,49 @@
+      ******************************************************************
+      * Author: BRIAN RIAN REHAN
+      ******************************************************************
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. brian1.
+       AUTHOR. BRIAN RIAN REHAN.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 NAMA PIC X(20).
+       77 NPM PIC 9(8).
+       77 KELAS PIC X(15).
+       77 UTS PIC 9(2).
+       77 UAS PIC 9(2).
+       77 HASIL PIC 9(2).
+       77 BENAR PIC X VALUE SPACE.
+       SCREEN SECTION.
+       01 HAPUS.
+             02 BLANK SCREEN.
+       PROCEDURE DIVISION.
+       MULAI.
+           DISPLAY HAPUS.
+           PERFORM INPUTAN
+           COMPUTE HASIL = (UTS * 0.7) + (UAS * 0.3)
+           PERFORM TAMPILKAN
+           IF HASIL > 70 DISPLAY 'LULUS'.
+           IF HASIL < 50 DISPLAY 'TIDAK LULUS'.
+           STOP RUN.
+
+       INPUTAN.
+           DISPLAY 'MASUKKAN NAMA      : ', ACCEPT NAMA.
+           DISPLAY 'MASUKKAN NPM ANDA  : ', ACCEPT NPM.
+           DISPLAY 'MASUKKAN KELAS     : ', ACCEPT KELAS.
+           DISPLAY 'MASUKKAN NILAI UTS : ', ACCEPT UTS.
+           DISPLAY 'MASUKKAN NILAI UAS : ', ACCEPT UAS.
+           DISPLAY 'SUDAH BENAR DATA INI (Y/T) ?', ACCEPT BENAR.
+
+       
+       TAMPILKAN.
+           DISPLAY " "
+           DISPLAY "|     DATA YANG DI TAMPILKAN    |".    
+           DISPLAY "=================================".
+           DISPLAY 'NAMA          : ', NAMA.
+           DISPLAY 'NPM           : ', NPM.
+           DISPLAY 'KELAS         : ', KELAS.
+           DISPLAY 'NILAI UTS     : ', UTS.
+           DISPLAY 'NILAI UAS     : ', UAS.
+           DISPLAY 'NILAI AKHIR   : ', HASIL.
+           DISPLAY "==============================".
